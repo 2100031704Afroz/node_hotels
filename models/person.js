@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const { type } = require('server/reply')
 const personSchema = new mongoose.Schema({
     name:{
         type:String,

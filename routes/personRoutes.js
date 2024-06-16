@@ -22,7 +22,7 @@ router.get('/',async (req,res)=>{
       if(workparam == 'chef'||workparam == 'manager'||workparam == 'waiter')
         {
           const response = await Person.find({work:workparam})
-          console.log('data of $workparam fetched successfully')
+          console.log(`data of ${workparam} fetched successfully`)
           res.status(200).json(response)
         }
         else {

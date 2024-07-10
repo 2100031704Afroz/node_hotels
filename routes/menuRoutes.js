@@ -15,9 +15,9 @@ router.get('/',async(req,res)=>{
     }
   })
 
-  router.get('/:taste',async(req,res)=>{
-    try{   
-    const taste = req.params.taste;
+  router.get('/:t',async(req,res)=>{
+    try{
+    const taste = req.params.t;
     if(taste == 'sweet'|| taste =='sour' || taste=='spicy')
         {
             const data = await Menu.find({taste:taste})
@@ -25,7 +25,7 @@ router.get('/',async(req,res)=>{
             res.status(200).json(data);
         }
         else {
-            res.status(404).json({err:'Internal server error'})
+            res.status(404).json({err:'taste not found'})
         }
     }
     catch(err){

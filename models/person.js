@@ -34,7 +34,8 @@ const personSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
     password: {
         type: String,
@@ -69,5 +70,5 @@ personSchema.methods.comparePassword = async function(candidatePassword) {
 };
 
 // Create and export the Person model
-const Person = mongoose.model('Person', personSchema);
-module.exports = Person;
+module.exports = mongoose.model('Person', personSchema);
+ 
